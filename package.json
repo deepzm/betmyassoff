@@ -1,0 +1,28 @@
+{
+  "name": "bet-my-ass-off",
+  "version": "0.0.1",
+
+"description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "deepak",
+  "config": {
+    "unsafe-perm":true
+  },
+  "devDependencies": {
+    "karma": "~0.12.0",
+    "grunt-karma": "~0.8.0",
+    "grunt-contrib-copy": "0.4.x",
+    "grunt-bower": "0.13.4"
+
+  },
+  "scripts": {    
+
+    "pretest": "npm install",
+    "test": "karma start public/test/karma.conf.js",
+    "test-single-run": "karma start public/test/karma.conf.js  --single-run"
+  }
+
+}
