@@ -11,18 +11,17 @@ module.exports = function(grunt) {
         },
 
         bower: {
-          dev: {
-            dest: 'public/vendor/',
-            js_dest: 'public/vendor/js',
-            css_dest: 'public/vendor/styles',
-            options: {
-              expand: true
+            install : {
+                options: {
+                    targetDir: './public/vendor',
+                    layout: 'byType',
+                    cleanTargetDir: false,
+                }
             }
-          }
         }
     });
  
-    grunt.loadNpmTasks('grunt-bower');
+    grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-karma');
-    grunt.registerTask('default', ['bower','karma']);
+    grunt.registerTask('default', ['bower']);
 };
