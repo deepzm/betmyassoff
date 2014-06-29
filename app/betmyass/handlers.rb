@@ -50,8 +50,7 @@ module BetMyAss
     end
 
     post "/login" do
-      @msg = ""
-      puts "user login #{params}"
+      @msg = nil
       user = 
       BetMyAss::Model::User.authenticate(
         params['user']['username'],
@@ -68,7 +67,6 @@ module BetMyAss
     end
 
     get "/logout" do
-      puts "Logging out"
       session[:user_id] = nil
       redirect '/login'
     end
