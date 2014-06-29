@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="betMyAssApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,6 @@
 	
 	<link rel="stylesheet" href="vendor/bootstrap/bootstrap.css">
 	<link rel="stylesheet" href="css/app.css">
-  	<script src="vendor/angular/angular.js"></script>
 
 </head>
 <body>
@@ -32,15 +31,19 @@
 		          </ul>
 		          <ul class="nav navbar-nav navbar-right">
 		            <li><img src="images/profile_default.jpg" class="profile-img-small"></li>
-		            <li><a href="#contact">User Name</a></li>
+		            <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Name <span class="caret"></span></a>
+			          <ul class="dropdown-menu" role="menu">
+			            <li><a href="/logout">Logout</a></li>
+			          </ul>
+			        </li>
 		          </ul>
 		        </div>
 		      </div>
 		    </div>
 		</div>
-		<div ng-app >
+		<div class="container" ng-view >
 			
-  		<p>Nothing here {{'yet' + '!'}}</p>
 
 		</div>
 	</div>
@@ -49,6 +52,9 @@
 
 	 <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="vendor/jquery/jquery.js"></script>
+  	<script src="vendor/angular/angular.js"></script>
+  	<script src="vendor/angular-route/angular-route.js"></script>
     <script src="vendor/bootstrap/bootstrap.js"></script>
+    <script src="script/app.js"></script>
 </body>
 </html>

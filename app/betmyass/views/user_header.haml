@@ -1,0 +1,8 @@
+%ul.nav.navbar-nav.navbar-right
+	%li
+		%img.profile-img-small{ "src" => "images/profile_default.jpg"}
+	%li.dropdown
+		%a.dropdown-toggle{ "href" => "#", "data-toggle" => "dropdown" } #{@user.username} <span class="caret"></span>
+		%ul.dropdown-menu{ "role" => "menu" }
+			%li
+				%a{ "href" => "/logout"} Logout

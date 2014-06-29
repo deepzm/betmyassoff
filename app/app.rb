@@ -1,7 +1,11 @@
-require 'sinatra'
+$LOAD_PATH << 'app'
+
+require 'rubygems'
+require 'bundler'
+Bundler.require
 
 
+require 'betmyass/handlers'
 
-get '/' do
-  File.read(File.join('public/html', 'index.html'))
-end
+## setup
+require 'betmyass/model/user'
