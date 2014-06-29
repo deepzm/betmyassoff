@@ -1,10 +1,10 @@
 
 require 'betmyass/model/base_model'
+require 'betmyass/model/tournament'
 
 module BetMyAss
 	module Model
-		class User < BaseModel		
-
+		class Match < BaseModel		
 			##---------------------------------
 			DB = {}	
 			def self.all
@@ -25,17 +25,17 @@ module BetMyAss
 				self
 			end
 			##---------------------------------
+				
+			attr_accessor :id, :tournament_id, :teamOne_id, :teamTwo_id, :time
 
-			def self.authenticate (username, password)
-				self.all.find { |user| user.username == username }
+			def initialize(tournament, teamOne, teamTwo, time)
+				@tournament_id = tournament
+				@teamOne_id = teamOne
+				@teamTwo_id = teamTwo
+				@time = time
 			end
 
-			attr_accessor :id, :username, :password, :name
-
-			def initialize(username)
-				@username = username
-			end
-
-		 end	
+			
+		end
 	end
 end
